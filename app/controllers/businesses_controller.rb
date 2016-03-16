@@ -1,9 +1,11 @@
 class BusinessesController < ApplicationController
+  before_action :find_post, only: [:show, :edit, :update, :destroy]
+
   def index
+    @businesses = Business.all.order("created_at DESC")
   end
 
   def show
-    @business = Business.find(params[:id])
   end
 
   def new
@@ -32,9 +34,10 @@ class BusinessesController < ApplicationController
   private
 
   def find_post
+    @business = Business.find(params[:id])
   end
 
   def business_params
-    params.require(:business).permit(:name, :description, :address, :city, :state, :zip)
+    params.require(:business).permit(:name, :description, :address, :city, :state, :zip, :image)
   end
 end

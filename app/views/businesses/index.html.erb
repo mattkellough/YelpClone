@@ -1,1 +1,5 @@
-<h1>This is the Placeholder</h1>
+<% @businesses.each do |business| %>
+<h2><%=link_to business.name, business%></h2>
+<%end%>
+
+<%= link_to "Add Your Business!", new_business_path %>
