@@ -58,6 +58,12 @@
    font-weight: 300;
    cursor: pointer;
  }
+
+  a.logo{
+
+    text-decoration: none;
+  }
+
  .fixed-nav-bar .logo span {
    color: white;
    font-weight: 600;

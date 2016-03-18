@@ -5,10 +5,12 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <!-- <script src="bower_components/sweetalert/dist/sweetalert.min.js"></script>
+  <link rel="stylesheet" href="bower_components/sweetalert/dist/sweetalert.css" /> -->
 </head>
 <body>
   <div class="fixed-nav-bar">
-    <div class="logo"><span>Yelp</span>Clone</div>
+    <a class="logo" href="/" link_to root_url><span>Yelp</span>Clone</a>
     <input type="checkbox" id="menuButton" />
     <label for="menuButton" class="menu-button-label">
       <div class="white-bar"></div>
@@ -41,17 +43,14 @@
     <% end %>
   </div>
 
-  <!-- <div id="user_header">
-    <% if current_user %>
-    Logged in as <%= current_user.email %>
-    <% end %>
-  </div> -->
 
   <% flash.each do |key, value| %>
     <%= content_tag(:div, class: "alert alert-#{key}") do %>
       <p><%= value %> </p>
     <% end %>
   <% end %>
+
+  <!-- <button id="test-1">Basic</button> -->
 
 
   <%= yield %>

@@ -17,6 +17,10 @@
 
 $( document ).ready(function() {
 
+//   document.querySelector('button#test-1').onclick = function(){
+//   swal("Here's a message!");
+// },
+
     // Function to change the nav-bar on scroll
     $(window).scroll(function(){
         ($(window).scrollTop() >= 100) ? (

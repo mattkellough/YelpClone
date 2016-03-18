@@ -2,7 +2,6 @@ class UsersController < ApplicationController
 before_action :find_user, only: [:show, :edit, :update, :destroy]
 
 def index
-  @users = User.all.order("created_at DESC")
 end
 
 def show
@@ -24,6 +23,7 @@ def create
 end
 
 def edit
+  session[:user_id] = @user.id
 end
 
 def update
