@@ -27,6 +27,12 @@ def edit
 end
 
 def update
+  if @user.update_attributes(user_params)
+      flash[:success] = "Profile updated"
+      redirect_to @user
+    else
+      render 'edit'
+    end
 end
 
 def destroy

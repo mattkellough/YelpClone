@@ -20,10 +20,10 @@
   <div class="the-bass">
     <% if current_user %>
     <div class="rela-block drop-down-container">
-      <div class="drop-down-item"><%= link_to "ADD A BUSINESS", new_business_path %></div>
+      <div class="drop-down-item"> <%= link_to current_user.name, edit_user_path(current_user) %></div>
     </div>
     <div class="rela-block drop-down-container">
-      <div class="drop-down-item">VIEW ACCOUNT</div>
+      <div class="drop-down-item"><%= link_to "ADD A BUSINESS", new_business_path %></div>
     </div>
     <div class="rela-block drop-down-container">
       <div class="drop-down-item"><%= link_to "LOG OUT", logout_path %></div>
@@ -41,11 +41,11 @@
     <% end %>
   </div>
 
-  <div id="user_header">
+  <!-- <div id="user_header">
     <% if current_user %>
     Logged in as <%= current_user.email %>
     <% end %>
-  </div>
+  </div> -->
 
   <% flash.each do |key, value| %>
     <%= content_tag(:div, class: "alert alert-#{key}") do %>
